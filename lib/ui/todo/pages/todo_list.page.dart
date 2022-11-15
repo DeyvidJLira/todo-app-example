@@ -41,18 +41,18 @@ class _TodoListPageState extends State<TodoListPage> {
                 itemBuilder: (_) => [
                       PopupMenuItem(
                           onTap: () => _controller.orderBy(SortType.az),
-                          child: const Text("AZ")),
+                          child: const Text(Strings.LABEL_SORT_AZ)),
                       PopupMenuItem(
                           onTap: () => _controller.orderBy(SortType.za),
-                          child: const Text("ZA")),
+                          child: const Text(Strings.LABEL_SORT_ZA)),
                       PopupMenuItem(
                           onTap: () =>
                               _controller.orderBy(SortType.highPriority),
-                          child: const Text("Alta Prioridade")),
+                          child: const Text(Strings.LABEL_SORT_HIGH_PRIORITY)),
                       PopupMenuItem(
                           onTap: () =>
                               _controller.orderBy(SortType.lowPriority),
-                          child: const Text("Baixa Prioridade"))
+                          child: const Text(Strings.LABEL_SORT_LOW_PRIORITY))
                     ])
           ],
         ),
