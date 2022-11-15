@@ -12,6 +12,10 @@ class Strings {
   static const String LABEL_YES = "SIM";
   static const String LABEL_NO = "NÃO";
   static const String LABEL_SAVE = "SALVAR";
+  static const String LABEL_SORT_AZ = "AZ";
+  static const String LABEL_SORT_ZA = "ZA";
+  static const String LABEL_SORT_HIGH_PRIORITY = "Alta Prioridade";
+  static const String LABEL_SORT_LOW_PRIORITY = "Baixa Prioridade";
 
   static const String VALID_NOT_EMPTY = "Campo não pode ser nulo.";
 

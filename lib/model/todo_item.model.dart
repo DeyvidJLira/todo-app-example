@@ -1,3 +1,7 @@
+import 'dart:math';
+
+import 'package:uuid/uuid.dart';
+
 class TodoItem {
   String? id;
   String title = "";
@@ -6,19 +10,12 @@ class TodoItem {
 
   TodoItem({this.id, this.title = "", this.priority = 0, this.isDone = false});
 
-  TodoItem.fromJson(Map<String, dynamic> json) {
-    id = json['_id'];
-    title = json['title'];
-    priority = json['priority'];
-    isDone = json['is_done'];
-  }
-
-  Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = {};
-    data['title'] = title;
-    data['priority'] = priority;
-    data['is_done'] = isDone;
-    return data;
+  TodoItem.mock() {
+    id = const Uuid().v4();
+    title = String.fromCharCodes(
+        List.generate(10, (index) => Random().nextInt(33) + 89));
+    priority = Random().nextInt(10);
+    isDone = Random().nextBool();
   }
 
   @override

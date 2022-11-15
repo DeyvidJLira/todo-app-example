@@ -3,9 +3,8 @@ import 'package:todo_app_example/model/todo_item.model.dart';
 
 class TodoItemCard extends StatefulWidget {
   final TodoItem item;
-  final Function(TodoItem item) update;
 
-  const TodoItemCard({super.key, required this.item, required this.update});
+  const TodoItemCard({super.key, required this.item});
 
   @override
   State<TodoItemCard> createState() => _TodoItemCardState();
@@ -39,7 +38,6 @@ class _TodoItemCardState extends State<TodoItemCard> {
                       onChanged: (value) {
                         isDoneValue.value = !isChecked;
                         widget.item.isDone = isDoneValue.value;
-                        widget.update(widget.item);
                       },
                     ),
                   ),
