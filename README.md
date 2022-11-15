@@ -8,7 +8,7 @@ Um projeto Flutter para aula sobre MVC, API, Dio e ValueNotifier.
 
 ## Documentações
 
-- [Documentação da API](https://deyvidjlira.stoplight.io/studio/class-about-api)
+- [Documentação da API](https://deyvidjlira.stoplight.io/docs/class-about-api/ypqnkclgha177-to-do)
 - [Documentação do Flutter](https://docs.flutter.dev/)
 - [Documentação do Dio](https://pub.dev/documentation/dio/latest/)
 
