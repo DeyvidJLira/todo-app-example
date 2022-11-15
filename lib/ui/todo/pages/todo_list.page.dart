@@ -78,8 +78,8 @@ class _TodoListPageState extends State<TodoListPage> {
                             : ListView.builder(
                                 itemCount: responseList.data?.length,
                                 itemBuilder: (_, index) => AnimateListItem(
-                                    index,
-                                    Dismissible(
+                                    key: ValueKey<int>(index),
+                                    child: Dismissible(
                                       background: Container(
                                         alignment: Alignment.centerRight,
                                         padding:
@@ -99,8 +99,7 @@ class _TodoListPageState extends State<TodoListPage> {
                                         item: responseList.data![index],
                                         update: _controller.update,
                                       ),
-                                    ),
-                                    key: ValueKey<int>(index)),
+                                    )),
                               )),
           ),
         ));
