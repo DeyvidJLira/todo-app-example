@@ -1,16 +1,13 @@
 # todo_app_example
 
-A new Flutter project.
+Um projeto Flutter para aula sobre MVC, API, Dio e ValueNotifier.
 
-## Getting Started
+## Começando
 
-This project is a starting point for a Flutter application.
+- [Site para obter o ID da API](https://crudcrud.com)
 
-A few resources to get you started if this is your first Flutter project:
+## Documentações
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- [Documentação da API](https://deyvidjlira.stoplight.io/studio/class-about-api)
+- [Documentação do Flutter](https://docs.flutter.dev/)
+- [Documentação do Dio](https://pub.dev/documentation/dio/latest/)
