@@ -37,6 +37,10 @@ class TodoFormController extends ChangeNotifier {
     todoItem.notifyListeners();
   }
 
+  void reset() {
+    todoItem.value = TodoItem();
+  }
+
   bool get canIncrease => todoItem.value.priority < _priorityMax;
   bool get canDecrease => todoItem.value.priority > _priorityMin;
 

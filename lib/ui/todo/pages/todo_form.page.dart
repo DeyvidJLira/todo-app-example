@@ -6,9 +6,14 @@ import 'package:todo_app_example/ui/components/alert_todo_dialog.component.dart'
 import 'package:todo_app_example/ui/components/progress_dialog.component.dart';
 import 'package:todo_app_example/ui/todo/controllers/todo_form.controller.dart';
 
-class TodoFormPage extends StatelessWidget {
-  TodoFormPage({super.key});
+class TodoFormPage extends StatefulWidget {
+  const TodoFormPage({super.key});
 
+  @override
+  State<TodoFormPage> createState() => _TodoFormPageState();
+}
+
+class _TodoFormPageState extends State<TodoFormPage> {
   final TodoFormController _controller =
       TodoFormController(TodoRepositoryImpl(APIService()));
   final _formKey = GlobalKey<FormState>();
@@ -18,12 +23,16 @@ class TodoFormPage extends StatelessWidget {
   late final BuildContext _context;
 
   @override
-  Widget build(BuildContext context) {
-    _context = context;
+  void initState() {
+    super.initState();
 
+    _context = context;
     _progressDialog = ProgressDialog(context);
     _alertTodoDialog = AlertTodoDialog(context);
+  }
 
+  @override
+  Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
           title: const Text(Strings.TODO_FORM_TITLE),
@@ -137,6 +146,7 @@ class TodoFormPage extends StatelessWidget {
             message: Strings.TODO_FORM_ALERT_SUCCESS_MESSAGE,
             positiveAction: () {
               _formKey.currentState!.reset();
+              _controller.reset();
             },
             negativeAction: () {
               Navigator.pop(_context);

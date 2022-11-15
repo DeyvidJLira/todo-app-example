@@ -13,14 +13,11 @@ class TodoListController extends ChangeNotifier {
 
   void load() async {
     responseListTodo.value = await _repository.getAll();
-    notifyListeners();
   }
 
   void sync() async {
     responseListTodo.value = APIResponse.loading();
-    notifyListeners();
     responseListTodo.value = await _repository.getAll();
-    notifyListeners();
   }
 
   void update(TodoItem item) async {
@@ -29,6 +26,8 @@ class TodoListController extends ChangeNotifier {
 
   void remove(int index) async {
     await _repository.delete(responseListTodo.value.data![index]);
+    responseListTodo.value.data!.removeAt(index);
+    responseListTodo.notifyListeners();
   }
 
   void orderBy(SortType sortType) {
@@ -48,8 +47,7 @@ class TodoListController extends ChangeNotifier {
             .sort((a, b) => a.priority.compareTo(b.priority));
         break;
     }
-    responseListTodo.value = APIResponse.success(responseListTodo.value.data);
-    notifyListeners();
+    responseListTodo.notifyListeners();
   }
 
   @override
