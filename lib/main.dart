@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
       routes: {
         "/": (_) => const TodoListPage(),
         "/list": (_) => const TodoListPage(),
-        "/new": (_) => TodoFormPage()
+        "/new": (_) => const TodoFormPage()
       },
     );
   }

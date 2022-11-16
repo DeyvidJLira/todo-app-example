@@ -28,7 +28,7 @@ class _TodoItemCardState extends State<TodoItemCard> {
       child: ValueListenableBuilder(
         valueListenable: isDoneValue,
         builder: (_, isChecked, child) => Container(
-            height: 80,
+            height: 100,
             padding: const EdgeInsets.all(16),
             child: Row(
               children: [
